@@ -1,0 +1,5 @@
+enableStaticAnalysis,true
+enableSearchDevelopQA,true
+enableCheckWorkTime,true
+enableGoogleNews,true
+enableTalker,true
