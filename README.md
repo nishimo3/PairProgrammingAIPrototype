@@ -34,21 +34,21 @@
   * Node.js v7.10.0
   * Swift version 3.1(swiftlang-802.0.53 clang-802.0.42)
 * インストール手順
-　* 必要なソフトウェアがインストールされていること
-　* ビルド(Maven)
-　　* $ mvn clean
-　　* $ mvn install
-　* ビルドで生成されたファイル(ClientUI-0.0.1.zip)を解凍してインストールする
-　　* $ unzip ClientUI-0.0.1.zip
-　　* $ cd ClientUI-0.0.1/bin
-　　* $ chmod 755 install.sh
-　　* $ ./install.sh
-　* コンフィグファイル(configuration/resource.properties)をカスタマイズする，基本的には以下のプロパティについて書き換える
-　　* nodeCommandPath：nodeの実行ファイルの場所
-　　* findBugsDir：FindBugsの実行ファイルの場所
-　　* docomoTalkerApiKey：Docomo雑談対話APIのApiKeyの指定(雑談対話 https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=dialogue&p_name=api_reference)
-* 起動手順
-　　* ./bin/PairProgrammingAI
+	* 必要なソフトウェアがインストールされていること
+	* ビルド(Maven)
+		* $ mvn clean
+		* $ mvn install
+	* ビルドで生成されたファイル(ClientUI-0.0.1.zip)を解凍してインストールする
+		* $ unzip ClientUI-0.0.1.zip
+		* $ cd ClientUI-0.0.1/bin
+		* $ chmod 755 install.sh
+		* $ ./install.sh
+	* コンフィグファイル(configuration/resource.properties)をカスタマイズする，基本的には以下のプロパティについて書き換える
+		* nodeCommandPath：nodeの実行ファイルの場所
+		* findBugsDir：FindBugsの実行ファイルの場所
+		* docomoTalkerApiKey：Docomo雑談対話APIのApiKeyの指定(雑談対話 https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=dialogue&p_name=api_reference)
+	* 起動手順
+		* ./bin/PairProgrammingAI
 
 ### Future works ###
 * プログラマの行動データを蓄積・解析する
