@@ -22,6 +22,7 @@ import jp.nishimo.bearpg.core.conversation.DocomoTalker;
 import jp.nishimo.bearpg.core.plugins.base.MessageInfo;
 import jp.nishimo.bearpg.core.threads.NotifyServer;
 import jp.nishimo.bearpg.core.threads.PluginServer;
+import jp.nishimo.bearpg.core.threads.ReceiveMessageServer;
 import jp.nishimo.bearpg.core.threads.WatchServer;
 import jp.nishimo.bearpg.core.watch.FileWatcher;
 import jp.nishimo.bearpg.plugins.FindBugsPlugin;
@@ -31,6 +32,7 @@ public class PairProgrammingAI {
 	public static WatchServer watchServer = null;
 	public static NotifyServer notifyServer = null;
 	public static PluginServer pluginServer = null;
+	public static ReceiveMessageServer receiveMessageServer = null;
 	private boolean isActive = false;
 	
 	public PairProgrammingAI(){
@@ -38,11 +40,13 @@ public class PairProgrammingAI {
 		watchServer = new WatchServer();
 		notifyServer = new NotifyServer();
 		pluginServer = new PluginServer();
+		receiveMessageServer = new ReceiveMessageServer();
 	}
 	
 	public void loop(){
 		Configuration.load();
 		
+		receiveMessageServer.start();
 		notifyServer.start();
 		pluginServer.start();
 		
@@ -124,6 +128,7 @@ public class PairProgrammingAI {
 	        exitItem.addActionListener(new ActionListener(){
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					receiveMessageServer.end();
 					notifyServer.end();
 					pluginServer.end();
 					Configuration.save();
